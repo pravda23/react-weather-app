@@ -8,11 +8,14 @@ function Card() {
     const getWeather = async () => {
       try {
         const api = await fetch(
-          "http://api.weatherapi.com/v1/current.json?key=47b6acea5d204134b4661938220707&q=Cape_Town&aqi=no"
+          "http://api.weatherapi.com/v1/forecast.json?key=47b6acea5d204134b4661938220707&q=London&days=5&aqi=no"
         );
         const data = await api.json();
-        console.log(data);
-        setCardData(data);
+        // console.log(data.forecast.forecastday[0].date);
+        // console.log(data.forecast.forecastday[1]);
+
+        setCardData(data.forecast.forecastday[0]);
+        console.log(data.forecast.forecastday[0]);
       } catch (err) {
         console.log(err);
       }
@@ -21,10 +24,9 @@ function Card() {
   }, []);
 
   return (
-    <div>
-      <h1>{cardData.location.name}</h1>
-      <h1>{cardData.current.temp_c}</h1>
-    </div>
+    <>
+      <div>{cardData.date}</div>
+    </>
   );
 }
 
