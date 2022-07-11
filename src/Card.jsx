@@ -21,20 +21,22 @@ function Card() {
     };
     getWeather();
   }, []);
-  // console.log(cardData.forecast.forecastday);
 
-  const mapped = cardData.forecast.forecastday.map((item) => {
-    console.log(item.date);
+  // console.log(cardData);
+  const forecastDates = cardData.forecast.forecastday.map((day) => {
+    console.log(day.date);
   });
-
-  // const renderedData = cardData.location.name;
-  // console.log(renderedData);
+  // console.log(forecastDate);
 
   return (
     <>
-      <div>content</div>
-      {/* <div>{cardData.current.temp_c}</div>
-      <div>{cardData.forecast.forecastday[0].maxtemp_c}</div> */}
+      {/* <div>hi</div> */}
+      <h2>{cardData.location.name}</h2>
+      <h2>
+        {cardData.forecast.forecastday[0].date} ........{" "}
+        {cardData.current.temp_c}
+        {/* {<li>JSON.stringify({forecastDates})</li>} */}
+      </h2>
     </>
   );
 }

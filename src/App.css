@@ -3,20 +3,27 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 h1 {
-  text-align: center;
-  font-size: 3em;
+  /* text-align: center; */
+  font-size: 2em;
+  margin-top: 0.2vh;
+}
+
+h2 {
+  /* text-align: center; */
+  font-size: 1em;
+  margin-top: 0.2vh;
 }
 
 .border {
   border: 1px solid dodgerblue;
-  padding: 3vw;
+  padding: 2vw;
   margin: 1vw;
 }
 
