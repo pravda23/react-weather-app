@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 function Forecast() {
   const [forecastData, setForecastData] = useState([]);
   const [locationData, setLocationData] = useState([]);
-  const [error, setError] = useState();
 
   useEffect(() => {
     const getWeather = async () => {
@@ -20,20 +19,37 @@ function Forecast() {
           });
         });
       } catch (err) {
-        console.log(setError(err));
+        console.log("Error");
       }
     };
     getWeather();
   }, []);
 
-  const renderedContent = forecastData.forecastday.map((i) => {
-    return <li>{i.date}</li>;
+  const renderedContent = forecastData.forecastday.map((item) => {
+    return (
+      <>
+        <div className="dateTempContainer">
+          <div className="dateContainer">
+            <li key={item.date_epoch}>
+              {new Date(item.date).toLocaleDateString("en-gb", {
+                weekday: "short",
+                month: "long",
+                day: "numeric",
+              })}
+            </li>
+          </div>
+          <div className="tempContainer" key={item.date_epoch}>
+            {item.day.maxtemp_c}
+          </div>
+        </div>
+      </>
+    );
   });
 
   return (
     <>
-      {/* <p>{locationData.name}</p> */}
-      <p>{renderedContent}</p>
+      <h2>{locationData.name}</h2>
+      <div>{renderedContent}</div>
     </>
   );
 }

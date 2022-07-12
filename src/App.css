@@ -19,6 +19,10 @@ h2 {
   font-size: 1em;
 }
 
+li {
+  list-style: none;
+}
+
 .border {
   border: 1px solid dodgerblue;
   padding: 1vw;
@@ -41,3 +45,14 @@ h2 {
   height: 60vh;
   width: 80vw;
 }
+
+.dateTempContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+}
+
+/* .dateContainer,
+.tempContainer {
+  background-color: red;
+} */
