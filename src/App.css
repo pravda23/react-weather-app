@@ -5,25 +5,23 @@ body {
   flex-direction: column;
   /* align-items: center; */
   /* justify-content: center; */
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   color: white;
 }
 
 h1 {
   /* text-align: center; */
   font-size: 2em;
-  margin-top: 0.2vh;
 }
 
 h2 {
   /* text-align: center; */
   font-size: 1em;
-  margin-top: 0.2vh;
 }
 
 .border {
   border: 1px solid dodgerblue;
-  padding: 2vw;
+  padding: 1vw;
   margin: 1vw;
 }
 
@@ -31,11 +29,11 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
+  width: 90vw;
 }
 
 .Header {
-  height: 10vh;
+  height: 20vh;
   width: 80vw;
 }
 
