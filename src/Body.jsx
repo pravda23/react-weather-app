@@ -1,11 +1,13 @@
 import "./App.css";
-import Card from "./Card";
+import Results from "./Results";
+import Search from "./Search";
 
 function Body() {
   return (
     <>
       <div className="Body border">
-        <Card />
+        <Search />
+        <Results />
       </div>
     </>
   );

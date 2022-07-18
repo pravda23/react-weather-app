@@ -3,7 +3,7 @@ import "./App.css";
 function Header() {
   return (
     <>
-      <h1 className="Header border">Weather app </h1>
+      <h1 className="Header border">React weather app</h1>
     </>
   );
 }

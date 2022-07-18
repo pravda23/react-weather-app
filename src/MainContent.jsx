@@ -8,6 +8,7 @@ function MainContent() {
       <div className="MainContent">
         <Header />
         <Body />
+        {/* <Footer /> */}
       </div>
     </>
   );
