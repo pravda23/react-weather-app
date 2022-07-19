@@ -1,19 +1,22 @@
+// TO DO: initially displays placeholder"your search results will appear here" then updates with city search api call results
+
 import "./App.css";
 import React, { useState, useEffect } from "react";
 
-function Results() {
-  const [forecastData, setForecastData] = useState([]);
-  const [locationData, setLocationData] = useState([]);
+function Results(props) {
+  const [forecast, setForecast] = useState([]);
+  const [location, setLocation] = useState([]);
+  const city = "Berlin";
 
   useEffect(() => {
     const getWeather = async () => {
       try {
         fetch(
-          "http://api.weatherapi.com/v1/forecast.json?key=47b6acea5d204134b4661938220707&q=Batumi&days=3&aqi=no"
+          `http://api.weatherapi.com/v1/forecast.json?key=47b6acea5d204134b4661938220707&q=${city}&days=3&aqi=no`
         ).then((response) => {
           response.json().then((data) => {
-            setForecastData(data.forecast);
-            setLocationData(data.location);
+            setForecast(data.forecast);
+            setLocation(data.location);
           });
         });
       } catch (err) {
@@ -23,8 +26,8 @@ function Results() {
     getWeather();
   }, []);
 
-  const renderedContent = forecastData.forecastday
-    ? forecastData.forecastday.map((item) => {
+  const renderedContent = forecast.forecastday
+    ? forecast.forecastday.map((item) => {
         // console.log(item.date_epoch);
         return (
           <div key={item.date_epoch} className="dateTempContainer">
@@ -45,7 +48,10 @@ function Results() {
 
   return (
     <>
-      <h2>{locationData.name}</h2>
+      <h2>
+        {location.name}, {location.country}
+      </h2>
+
       <div>{renderedContent}</div>
     </>
   );

@@ -1,17 +1,18 @@
 import "./App.css";
 import Header from "./Header";
 import Body from "./Body";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-function MainContent() {
+function App() {
   return (
-    <>
+    <Router>
       <div className="MainContent">
         <Header />
         <Body />
         {/* <Footer /> */}
       </div>
-    </>
+    </Router>
   );
 }
 
-export default MainContent;
+export default App;

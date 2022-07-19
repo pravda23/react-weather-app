@@ -1,15 +1,16 @@
 import "./App.css";
 import Results from "./Results";
 import Search from "./Search";
+import { useState } from "react";
 
 function Body() {
+  const [search, setSearch] = useState([]);
+
   return (
-    <>
-      <div className="Body border">
-        <Search />
-        <Results />
-      </div>
-    </>
+    <div className="Body border">
+      <Search setSearch={setSearch} />
+      <Results />
+    </div>
   );
 }
 
