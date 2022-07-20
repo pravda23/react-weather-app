@@ -1,15 +1,29 @@
 import "./App.css";
 import Results from "./Results";
-import Search from "./Search";
 import { useState } from "react";
 
 function Body() {
-  const [search, setSearch] = useState([]);
+  const [searchCity, setSearchCity] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(searchCity);
+  };
 
   return (
     <div className="Body border">
-      <Search setSearch={setSearch} />
-      <Results />
+      <form className="SearchForm">
+        <input
+          type="text"
+          value={searchCity}
+          placeholder="Search city"
+          onChange={(e) => {
+            setSearchCity(e.target.value);
+          }}
+        ></input>
+        <button onClick={handleSubmit}>Go</button>
+      </form>
+      <Results city={searchCity} />
     </div>
   );
 }
