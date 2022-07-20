@@ -7,23 +7,23 @@ function Body() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(searchCity);
+    const state = { searchCity };
   };
 
   return (
     <div className="Body border">
-      <form className="SearchForm">
-        <input
-          type="text"
-          value={searchCity}
-          placeholder="Search city"
-          onChange={(e) => {
-            setSearchCity(e.target.value);
-          }}
-        ></input>
-        <button onClick={handleSubmit}>Go</button>
+      <form className="SearchForm" onSubmit={handleSubmit}>
+        <label>
+          <input
+            value={searchCity}
+            onChange={(e) => {
+              setSearchCity(e.target.value);
+            }}
+          ></input>
+          <button type="submit">Go</button>
+        </label>
       </form>
-      <Results city={searchCity} />
+      <Results cityProp={searchCity} />
     </div>
   );
 }

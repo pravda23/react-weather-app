@@ -6,22 +6,34 @@ import "./App.css";
 import React from "react";
 import { useState, useEffect } from "react";
 
-function Results() {
+const Results = (props) => {
   const [forecast, setForecast] = useState([]);
   const [location, setLocation] = useState([]);
-  const searchCity = "London";
+
+  console.log(props.searchCity);
 
   useEffect(() => {
     const getWeather = async () => {
       try {
-        fetch(
-          `http://api.weatherapi.com/v1/forecast.json?key=47b6acea5d204134b4661938220707&q=${searchCity}&days=3&aqi=no`
-        ).then((response) => {
-          response.json().then((data) => {
-            setForecast(data.forecast);
-            setLocation(data.location);
+        if (props.searchCity === undefined) {
+          fetch(
+            `http://api.weatherapi.com/v1/forecast.json?key=47b6acea5d204134b4661938220707&q="London"&days=3&aqi=no`
+          ).then((response) => {
+            response.json().then((data) => {
+              setForecast(data.forecast);
+              setLocation(data.location);
+            });
           });
-        });
+        } else {
+          fetch(
+            `http://api.weatherapi.com/v1/forecast.json?key=47b6acea5d204134b4661938220707&q="${props.searchCity}"&days=3&aqi=no`
+          ).then((response) => {
+            response.json().then((data) => {
+              setForecast(data.forecast);
+              setLocation(data.location);
+            });
+          });
+        }
       } catch (err) {
         console.log("Error");
       }
@@ -31,7 +43,6 @@ function Results() {
 
   const renderedContent = forecast.forecastday
     ? forecast.forecastday.map((item) => {
-        // console.log(item.date_epoch);
         return (
           <div key={item.date_epoch} className="dateTempContainer">
             <div className="dateContainer">
@@ -43,6 +54,7 @@ function Results() {
                 })}
               </li>
             </div>
+
             <div className="tempContainer">{item.day.maxtemp_c}</div>
           </div>
         );
@@ -58,7 +70,7 @@ function Results() {
       <div>{renderedContent}</div>
     </div>
   );
-}
+};
 
 export default Results;
 
