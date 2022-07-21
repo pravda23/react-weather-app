@@ -9,37 +9,28 @@ import { useState, useEffect } from "react";
 const Results = (props) => {
   const [forecast, setForecast] = useState([]);
   const [location, setLocation] = useState([]);
+  const [cityProp, setCityProp] = useState([]);
 
-  console.log(props.searchCity);
+  console.log("props.cityProp: " + props.cityProp);
 
   useEffect(() => {
     const getWeather = async () => {
       try {
-        if (props.searchCity === undefined) {
-          fetch(
-            `http://api.weatherapi.com/v1/forecast.json?key=47b6acea5d204134b4661938220707&q="London"&days=3&aqi=no`
-          ).then((response) => {
-            response.json().then((data) => {
-              setForecast(data.forecast);
-              setLocation(data.location);
-            });
+        fetch(
+          `http://api.weatherapi.com/v1/forecast.json?key=47b6acea5d204134b4661938220707&q="${props.cityProp}"&days=3&aqi=no`
+        ).then((response) => {
+          response.json().then((data) => {
+            setForecast(data.forecast);
+            setLocation(data.location);
+            setCityProp(props.cityProp);
           });
-        } else {
-          fetch(
-            `http://api.weatherapi.com/v1/forecast.json?key=47b6acea5d204134b4661938220707&q="${props.searchCity}"&days=3&aqi=no`
-          ).then((response) => {
-            response.json().then((data) => {
-              setForecast(data.forecast);
-              setLocation(data.location);
-            });
-          });
-        }
+        });
       } catch (err) {
         console.log("Error");
       }
     };
     getWeather();
-  }, []);
+  }, [props.cityProp]);
 
   const renderedContent = forecast.forecastday
     ? forecast.forecastday.map((item) => {
