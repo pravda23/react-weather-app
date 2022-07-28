@@ -3,6 +3,8 @@
   box-sizing: border-box;
 }
 
+/* Body */
+
 body {
   background-color: #222222;
   min-height: 100vh;
@@ -26,7 +28,7 @@ li {
   list-style: none;
 }
 
-.MainContent {
+.mainContent {
   border: 1px solid gray;
   height: 100vh;
   display: flex;
@@ -35,9 +37,7 @@ li {
   width: 100vw;
 }
 
-/* .siteHeaderContainer {
-  display: flex;
-} */
+/* Header */
 
 .siteHeaderContainer {
   font-size: 2rem;
@@ -58,11 +58,6 @@ li {
   font-family: "Poppins";
 }
 
-.Body {
-  height: 60vh;
-  width: 80vw;
-}
-
 /* Results */
 
 .resultHeader {
@@ -80,7 +75,6 @@ li {
 
 .resultDay {
   margin: 1rem;
-  /* border: 1px solid dodgerblue; */
   border-radius: 0.3rem;
   background-color: rgb(206, 38, 89, 100);
   display: grid;
@@ -92,7 +86,6 @@ li {
 .resultDayItem {
   display: flex;
   align-items: center;
-  /* border: 1px solid salmon; */
 }
 
 .weatherIcon {

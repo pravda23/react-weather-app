@@ -8,7 +8,7 @@ const Results = (props) => {
 
   useEffect(() => {
     if (props.cityProp === "") {
-      console.log("empty");
+      console.log("search input empty");
     } else {
       const getWeather = async () => {
         try {
@@ -74,6 +74,6 @@ const Results = (props) => {
 
 export default Results;
 
-// // The ternary conditional surrounding renderedContent prevents forecastday from being undefined. The app runs an async api call, but forecastday is called before it can return this data. The conditional logic basically says ignore the renderedContent code block unless there's a change to the state value, originally defined as an empty array in useState([]) and then updated with the api data.
+// The ternary conditional surrounding renderedContent prevents forecastday from being undefined. The app runs an async api call, but forecastday is called before it can return this data. The conditional logic basically says ignore the renderedContent code block unless there's a change to the state value, originally defined as an empty array in useState([]) and then updated with the api data.
 
 // At one point, the data wasn't being passed to the api call because of the useEffect dependency array (the ",[]" after useEffect). The array tells the program what incoming data to monitor for. Being blank, it didn't understand that it was 'listening' for props.cityProps
