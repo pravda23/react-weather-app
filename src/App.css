@@ -1,44 +1,61 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #222222;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
   font-size: calc(10px + 1vmin);
   color: white;
 }
 
 h1 {
-  /* text-align: center; */
   font-size: 2em;
+  padding: 0.5rem;
 }
 
 h2 {
-  /* text-align: center; */
   font-size: 1em;
+  padding: 0.5rem;
 }
 
 li {
   list-style: none;
 }
 
-.border {
-  border: 1px solid dodgerblue;
-  padding: 1vw;
-  margin: 1vw;
-}
-
 .MainContent {
+  border: 1px solid gray;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90vw;
+  width: 100vw;
 }
 
-.Header {
-  height: 20vh;
-  width: 80vw;
+/* .siteHeaderContainer {
+  display: flex;
+} */
+
+.siteHeaderContainer {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Pacifico", cursive;
+  background-color: rgb(206, 38, 89);
+  height: 10vh;
+  width: 100vw;
+  padding-left: 0.5rem;
+  display: flex;
+  align-content: left;
+  align-items: baseline;
+}
+
+.siteTitle {
+  padding-left: 1rem;
+  font-size: 1rem;
+  font-family: "Poppins";
 }
 
 .Body {
@@ -48,31 +65,47 @@ li {
 
 /* Results */
 
-.dateContainer {
-  border: 1px solid red;
+.resultHeader {
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.resultContainer {
+  border: 1px solid green;
+  display: grid;
+  grid-template-columns: 25% 10% 25% 40%;
+  font-weight: bold;
 }
 
 .resultDay {
-  border: 1px solid blue;
+  margin: 1rem;
+  /* border: 1px solid dodgerblue; */
+  border-radius: 0.3rem;
+  background-color: rgb(206, 38, 89, 100);
   display: grid;
-  grid-template-columns: 25% 10% 50% 15%;
+  grid-template-columns: 25% 10% 25% 40%;
   justify-content: end;
-  padding: 0.5rem;
+  padding: 0 0.5rem 0 0.5rem;
 }
 
 .resultDayItem {
   display: flex;
   align-items: center;
-  border: 1px solid salmon;
+  /* border: 1px solid salmon; */
 }
 
 .weatherIcon {
   size: 1rem;
 }
 
-/* Search */
+/* Search bar */
 
-.SearchForm {
+.searchForm {
+  margin-top: 5vh;
+  border-radius: 0.3rem;
   margin: 0rem, 20rem;
-  width: 80%;
+  font-size: 2rem;
+  width: 80vw;
+  padding: 1rem;
 }

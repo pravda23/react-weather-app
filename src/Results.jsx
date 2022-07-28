@@ -30,16 +30,16 @@ const Results = (props) => {
 
   // pre-search explainer placeholder text
   if (!props.cityProp) {
-    return "Start typing a city name to search ";
+    return "";
   }
 
   return (
     <div>
-      <h2>
+      <div className="resultHeader">
         {location ? location.name : null}
-        {location ? "," : "City not found"}
+        {location ? ", " : "City not found"}
         {location ? location.country : null}
-      </h2>
+      </div>
 
       <div>
         {forecast && forecast.forecastday
@@ -56,13 +56,13 @@ const Results = (props) => {
                     </li>
                   </div>
                   <div className="resultDayItem">{item.day.maxtemp_c}</div>
-                  <div className="resultDayItem">{item.day.condition.text}</div>
                   <div className="resultDayItem">
                     <img
                       className="weatherIcon"
                       src={item.day.condition.icon}
                     ></img>
                   </div>
+                  <div className="resultDayItem">{item.day.condition.text}</div>
                 </div>
               );
             })

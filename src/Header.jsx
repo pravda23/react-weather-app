@@ -3,7 +3,10 @@ import "./App.css";
 function Header() {
   return (
     <>
-      <h1 className="Header border">The world's greatest weather app</h1>
+      <div className="siteHeaderContainer">
+        <div className="siteLogo">Whether...?</div>
+        <div className="siteTitle">THE WORLD'S #1 WEATHER APP</div>
+      </div>
     </>
   );
 }

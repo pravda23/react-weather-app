@@ -19,12 +19,14 @@ class Body extends Component {
 
   render() {
     return (
-      <div className="Body border">
+      <div>
         <form>
           <label>
             <input
+              className="searchForm"
               value={this.state.city}
               onChange={this.handleCityChange}
+              placeholder="Start typing a city name"
             ></input>
           </label>
         </form>
