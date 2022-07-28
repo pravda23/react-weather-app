@@ -48,16 +48,27 @@ li {
 
 /* Results */
 
-.dateTempContainer {
-  display: flex;
-  justify-content: space-around;
-  padding: 0.1rem;
+.dateContainer {
+  border: 1px solid red;
 }
 
-/* .dateContainer,
-.tempContainer {
-  background-color: red;
-} */
+.resultDay {
+  border: 1px solid blue;
+  display: grid;
+  grid-template-columns: 25% 10% 50% 15%;
+  justify-content: end;
+  padding: 0.5rem;
+}
+
+.resultDayItem {
+  display: flex;
+  align-items: center;
+  border: 1px solid salmon;
+}
+
+.weatherIcon {
+  size: 1rem;
+}
 
 /* Search */
 

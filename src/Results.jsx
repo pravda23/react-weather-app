@@ -45,8 +45,8 @@ const Results = (props) => {
         {forecast && forecast.forecastday
           ? forecast.forecastday.map((item) => {
               return (
-                <div key={item.date_epoch} className="dateTempContainer">
-                  <div className="dateContainer">
+                <div key={item.date_epoch} className="resultDay">
+                  <div className="resultDayItem">
                     <li>
                       {new Date(item.date).toLocaleDateString("en-gb", {
                         weekday: "short",
@@ -55,8 +55,14 @@ const Results = (props) => {
                       })}
                     </li>
                   </div>
-
-                  <div className="tempContainer">{item.day.maxtemp_c}</div>
+                  <div className="resultDayItem">{item.day.maxtemp_c}</div>
+                  <div className="resultDayItem">{item.day.condition.text}</div>
+                  <div className="resultDayItem">
+                    <img
+                      className="weatherIcon"
+                      src={item.day.condition.icon}
+                    ></img>
+                  </div>
                 </div>
               );
             })
