@@ -45,10 +45,11 @@ li {
   background-color: rgb(206, 38, 89);
   height: clamp(4rem, 15vh, 6rem);
   width: 100vw;
-  padding-left: 0.5rem;
+  padding: 0.5rem;
   display: flex;
   align-content: left;
   align-items: baseline;
+  border: 1px solid dodgerblue;
 }
 
 .siteTitle {
@@ -61,7 +62,7 @@ li {
 
 .searchFormContainer {
   position: fixed;
-  top: clamp(4rem, 12vh, 8rem);
+  top: clamp(6.5rem, 12vh, 8rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,8 +74,6 @@ li {
   width: 95vw;
   border-radius: 0.3rem;
   font-size: 2rem;
-  /* margin: 0rem, 20rem; */
-  /* width: 80vw; */
   padding: 1rem;
   border: 3px solid rgb(206, 38, 89, 100);
 }
@@ -124,7 +123,7 @@ li {
   font-weight: bold;
   /* font-family: "Pacifico", cursive; */
   background-color: rgb(206, 38, 89);
-  height: 10vh;
+  height: 5vh;
   width: 100vw;
   padding: 0.5rem;
   display: flex;
@@ -144,5 +143,10 @@ li {
 
   .siteTitle {
     padding-left: 0.2rem;
+  }
+
+  .searchForm {
+    top: 20vh;
+    font-size: 1.6rem;
   }
 }
