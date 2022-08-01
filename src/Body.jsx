@@ -19,7 +19,7 @@ class Body extends Component {
 
   render() {
     return (
-      <div>
+      <div className="searchFormContainer">
         <form>
           <label>
             <input
@@ -27,6 +27,7 @@ class Body extends Component {
               value={this.state.city}
               onChange={this.handleCityChange}
               placeholder="Start typing a city name"
+              autoFocus
             ></input>
           </label>
         </form>

@@ -1,6 +1,7 @@
 import "./App.css";
-import Header from "./Header";
 import Body from "./Body";
+import Header from "./Header";
+import Footer from "./Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
       <div className="mainContent">
         <Header />
         <Body />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );
