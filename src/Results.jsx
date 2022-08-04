@@ -60,6 +60,7 @@ const Results = (props) => {
                     <div className="resultDayItem">{item.day.maxtemp_c}</div>
                     <div className="resultDayItem">
                       <img
+                        alt="weather-icon"
                         className="weatherIcon"
                         src={item.day.condition.icon}
                       ></img>
