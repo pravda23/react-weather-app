@@ -13,7 +13,7 @@ const Results = (props) => {
       const getWeather = async () => {
         try {
           fetch(
-            `http://api.weatherapi.com/v1/forecast.json?key=47b6acea5d204134b4661938220707&q="${props.cityProp}"&days=3&aqi=no`
+            `https://api.weatherapi.com/v1/forecast.json?key=47b6acea5d204134b4661938220707&q="${props.cityProp}"&days=3&aqi=no`
           ).then((response) => {
             response.json().then((data) => {
               setForecast(data.forecast);
