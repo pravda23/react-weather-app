@@ -7,5 +7,5 @@ export function fetchCityData(city, key) {
 }
 
 export function processCityData(data) {
-  return { forecast: null, location: data.location };
+  return { forecast: data.forecast, location: data.location };
 }

@@ -1,8 +1,8 @@
 import "./App.css";
 import React from "react";
 import { useState, useEffect } from "react";
-import { fetchCityData, processCityData } from "./weather-api";
-import config from "./config.js";
+import { fetchCityData, processCityData } from "./weather-api.js";
+import exportApi from "./config.js";
 
 const Results = (props) => {
   const [forecast, setForecast] = useState([]);
@@ -14,7 +14,7 @@ const Results = (props) => {
     } else {
       const getWeather = async () => {
         try {
-          const data = await fetchCityData(props.cityProp, config.apiKey);
+          const data = await fetchCityData(props.cityProp, exportApi.apiKey);
           const { forecast, location } = processCityData(data);
           setForecast(forecast);
           setLocation(location);
