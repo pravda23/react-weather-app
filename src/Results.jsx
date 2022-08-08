@@ -1,6 +1,8 @@
 import "./App.css";
 import React from "react";
 import { useState, useEffect } from "react";
+import { fetchCityData, processCityData } from "./weather-api";
+import config from "./config.js";
 
 const Results = (props) => {
   const [forecast, setForecast] = useState([]);
@@ -12,16 +14,12 @@ const Results = (props) => {
     } else {
       const getWeather = async () => {
         try {
-          fetch(
-            `https://api.weatherapi.com/v1/forecast.json?key=47b6acea5d204134b4661938220707&q="${props.cityProp}"&days=3&aqi=no`
-          ).then((response) => {
-            response.json().then((data) => {
-              setForecast(data.forecast);
-              setLocation(data.location);
-            });
-          });
+          const data = await fetchCityData(props.cityProp, config.apiKey);
+          const { forecast, location } = processCityData(data);
+          setForecast(forecast);
+          setLocation(location);
         } catch (err) {
-          console.log("Error");
+          console.log(err);
         }
       };
       getWeather();
