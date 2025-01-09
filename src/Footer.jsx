@@ -1,9 +1,11 @@
-import "./App.css";
+import "./styles/App.css";
 
 function Footer() {
   return (
     <>
-      <div className="siteFooterContainer">© 2022 Lightshade Design</div>
+      <div className="siteFooterContainer">
+        No clouds were harmed in the making of this application.
+      </div>
     </>
   );
 }

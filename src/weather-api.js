@@ -1,11 +1,11 @@
 export function fetchCityData(city, key) {
   return fetch(
-    `https://api.weatherapi.com/v1/forecast.json?key=${key}&q="${city}"&days=3&aqi=no`
+    `https://api.weatherapi.com/v1/forecast.json?key=${key}&q="${city}"&days=10&aqi=no`
   ).then((response) => {
     return response.json();
   });
 }
 
 export function processCityData(data) {
-  return { forecast: data.forecast, location: data.location };
+  return { forecast: data.forecast, location: data.location, key: data.key };
 }

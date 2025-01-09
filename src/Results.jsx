@@ -1,8 +1,8 @@
-import "./App.css";
 import React from "react";
 import { useState, useEffect } from "react";
 import { fetchCityData, processCityData } from "./weather-api.js";
 import exportApi from "./config.js";
+import "./styles/App.css";
 
 const Results = (props) => {
   const [forecast, setForecast] = useState([]);
@@ -10,7 +10,6 @@ const Results = (props) => {
 
   useEffect(() => {
     if (props.cityProp === "") {
-      console.log("search input empty");
     } else {
       const getWeather = async () => {
         try {
